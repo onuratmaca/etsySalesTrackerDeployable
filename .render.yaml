@@ -1,0 +1,20 @@
+
+services:
+  - type: web
+    name: etsy-tracker-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    rootDir: server
+    plan: free
+    envVars: []
+
+  - type: static
+    name: etsy-tracker-frontend
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: dist
+    rootDir: client
+    envVars:
+      - key: VITE_API_URL
+        value: https://etsy-tracker-backend.onrender.com
