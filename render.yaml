@@ -1,4 +1,3 @@
-
 services:
   - type: web
     name: etsy-tracker-backend
@@ -9,7 +8,7 @@ services:
     plan: free
     envVars: []
 
-  - type: static
+  - type: static_site
     name: etsy-tracker-frontend
     env: static
     buildCommand: npm run build
